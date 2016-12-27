@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Baseapp</title>
+  <title>KeepUp</title>
   <%= stylesheet_link_tag    'application', media: 'all' %>
   <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
@@ -11,14 +11,6 @@
 <%= render partial: 'layouts/header' %>
 
 <div class='container'>
-  <% if notice %>
-    <div class="alert alert-dismissible alert-info"><p><%= notice %></p></div>
-  <% end %>
-
-  <% if alert %>
-    <div class="alert alert-dismissible alert-danger"><p><%= alert %></p></div>
-  <% end %>
-
   <%= yield %>
 </div>
 
