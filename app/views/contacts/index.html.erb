@@ -1,4 +1,3 @@
-<%= @user.first_name %> <%= @user.last_name %> Hello
 <div class="panel panel-default">
   <div class="panel-heading">My Contacts</div>
   <div class="panel-body">
@@ -12,6 +11,11 @@
         </ul>
       <% end %>
     <% end %>
-    <%= link_to "Manage contacts", contacts_path, class: "btn btn-default" %>
+    <div>
+      <button id='jq-add-contact' class='btn btn-info'><i class='fa fa-plus'></i> Add contact</button>
+      <div id='jq-new-contact' class='hidden'>
+        <%= render partial: 'new' %>
+      </div>
+    </div>
   </div>
 </div>

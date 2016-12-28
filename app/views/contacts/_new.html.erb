@@ -1,0 +1,8 @@
+<%= form_for(Contact.new, remote: true) do |f| %>
+  <div class="form-group col-xs-12 col-md-6">
+    <%= f.text_field :name, class: "form-control", placeholder: "Name" %>
+  </div>
+  <div class="form-group col-xs-12 col-md-6">
+    <%= f.email_field :email, autofocus: true, class: "form-control", placeholder: "Email" %>
+  </div>
+<% end %>
