@@ -9,7 +9,7 @@ class ContactsController < ApplicationController
     @contact = current_user.contacts.new(contact_params)
     respond_to do |format|
       if @contact.save
-        format.json { render json: @contact, status: 201 }
+        format.json { render json: @contact.to_json(methods: :next_send_date), status: 201 }
       else
         format.json { render json: { errors: @contact.errors.full_messages }, status: 422 }
       end

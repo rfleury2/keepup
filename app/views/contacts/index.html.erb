@@ -8,7 +8,7 @@
         </div>
       <% else %>
           <% @contacts.each do |contact| %>
-            <li class='contact-list-item'><%= contact.name %> - <%= contact.email %></li>
+            <li class='contact-list-item'><%= contact.name %> - <%= contact.email %> - <%= contact.next_send_date %></li>
           <% end %>
       <% end %>
     </ul>
