@@ -5,11 +5,11 @@
       <!-- EMPTY STATE GOES HERE -->
         No contacts yet.
     <% else %>
-      <% @contacts.each do |contact| %>
-        <ul class="list-group">
-          <%= contact.name %> - <%= contact.email %>
-        </ul>
-      <% end %>
+      <ul class="list-group" id='jq-contact-index'>
+        <% @contacts.each do |contact| %>
+          <li class="list-group-item"><%= contact.name %> - <%= contact.email %></li>
+        <% end %>
+      </ul>
     <% end %>
     <div>
       <button id='jq-add-contact' class='btn btn-info'><i class='fa fa-plus'></i> Add contact</button>
