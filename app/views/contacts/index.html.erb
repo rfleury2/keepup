@@ -1,18 +1,18 @@
-<div class="panel panel-default">
+<div class="panel panel-default contacts-panel center-block">
   <div class="panel-heading">My Contacts</div>
   <div class="panel-body">
     <% if @contacts.empty? %>
       <!-- EMPTY STATE GOES HERE -->
         No contacts yet.
     <% else %>
-      <ul class="list-group" id='jq-contact-index'>
+      <ul id='jq-contact-index'>
         <% @contacts.each do |contact| %>
-          <li class="list-group-item"><%= contact.name %> - <%= contact.email %></li>
+          <li class='contact-list-item'><%= contact.name %> - <%= contact.email %></li>
         <% end %>
       </ul>
     <% end %>
     <div>
-      <button id='jq-add-contact' class='btn btn-info'><i class='fa fa-plus'></i> Add contact</button>
+      <button id='jq-add-contact' class='btn btn-info add-contact-button'><i class='fa fa-plus'></i> Add contact</button>
       <div id='jq-new-contact' class='hidden'>
         <%= render partial: 'new' %>
       </div>

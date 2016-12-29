@@ -24,7 +24,7 @@ $(document).on("click", "#jq-add-contact", () => {
 
 
 var appendNewContact = (contact) => {
-  $('#jq-contact-index').append(`<li class="list-group-item">${contact.name} - ${contact.email}</li>`)
+  $('#jq-contact-index').append(`<li class="contact-list-item">${contact.name} - ${contact.email}</li>`)
 };
 
 var wipeFormFields = () => {

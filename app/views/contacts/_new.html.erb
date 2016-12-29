@@ -1,13 +1,15 @@
 <div id='new-contact-alert' class='alert alert-danger hidden'></div>
 
 <%= form_for(Contact.new, remote: true) do |f| %>
-  <div class="form-group col-xs-12 col-md-5">
-    <%= f.text_field :name, class: "form-control jq-contact-form-field", placeholder: "Name" %>
-  </div>
-  <div class="form-group col-xs-12 col-md-5">
-    <%= f.email_field :email, autofocus: true, class: "form-control jq-contact-form-field", placeholder: "Email" %>
-  </div>
-  <div class="form-group col-xs-12 col-md-2">
-    <%= f.submit "Save contact", class: 'btn btn-success btn-block' %>
+  <div class='row no-gutter'>
+    <div class="form-group col-xs-12 col-md-5">
+      <%= f.text_field :name, class: "form-control jq-contact-form-field", placeholder: "Name" %>
+    </div>
+    <div class="form-group col-xs-12 col-md-5">
+      <%= f.email_field :email, autofocus: true, class: "form-control jq-contact-form-field", placeholder: "Email" %>
+    </div>
+    <div class="form-group col-xs-12 col-md-2">
+      <%= f.submit "Save contact", class: 'btn btn-success btn-block' %>
+    </div>
   </div>
 <% end %>
