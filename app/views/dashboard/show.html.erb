@@ -1,17 +1,24 @@
-<%= @user.first_name %> <%= @user.last_name %> Hello
+<%= @dashboard.user.first_name %> <%= @dashboard.user.last_name %> Hello
 <div class="panel panel-default">
   <div class="panel-heading">My Contacts</div>
   <div class="panel-body">
-    <% if @contacts.empty? %>
+    <% if @dashboard.has_no_contacts? %>
       <!-- EMPTY STATE GOES HERE -->
-        No contacts yet.
+      <div class="alert alert-info" role="alert">
+        <p>You have no contacts yet.  <%= link_to "Start managing your contacts", contacts_path, class: "pull-right alert-link" %></p>
+      </div>
     <% else %>
-      <% @contacts.each do |contact| %>
+      <% @dashboard.upcoming_contacts.each do |contact| %>
         <ul class="list-group">
           <%= contact.name %> - <%= contact.email %>
         </ul>
       <% end %>
     <% end %>
-    <%= link_to "Manage contacts", contacts_path, class: "btn btn-default" %>
+    <div>
+      <%= link_to "Manage contacts", contacts_path, class: "btn btn-default" %>
+      <% unless @dashboard.has_no_contacts? %>
+        <span class='pull-right'><%= @dashboard.contact_count %> total contacts.</span>
+      <% end %>
+    </div>
   </div>
 </div>
