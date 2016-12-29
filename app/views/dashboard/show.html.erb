@@ -1,0 +1,17 @@
+<%= @user.first_name %> <%= @user.last_name %> Hello
+<div class="panel panel-default">
+  <div class="panel-heading">My Contacts</div>
+  <div class="panel-body">
+    <% if @contacts.empty? %>
+      <!-- EMPTY STATE GOES HERE -->
+        No contacts yet.
+    <% else %>
+      <% @contacts.each do |contact| %>
+        <ul class="list-group">
+          <%= contact.name %> - <%= contact.email %>
+        </ul>
+      <% end %>
+    <% end %>
+    <%= link_to "Manage contacts", contacts_path, class: "btn btn-default" %>
+  </div>
+</div>
