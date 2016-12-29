@@ -39,5 +39,6 @@ var renderErrorMessage = (displayError) => {
 
 var removeErrorMessage = () => {
   $('#new-contact-alert').addClass('hidden');
+  $('.alert').addClass('hidden');
   $('#new-contact-alert').text("")
 };

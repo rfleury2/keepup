@@ -1,16 +1,17 @@
 <div class="panel panel-default contacts-panel center-block">
   <div class="panel-heading">My Contacts</div>
   <div class="panel-body">
-    <% if @contacts.empty? %>
-      <!-- EMPTY STATE GOES HERE -->
-        No contacts yet.
-    <% else %>
-      <ul id='jq-contact-index'>
-        <% @contacts.each do |contact| %>
-          <li class='contact-list-item'><%= contact.name %> - <%= contact.email %></li>
-        <% end %>
-      </ul>
-    <% end %>
+    <ul id='jq-contact-index'>
+      <% if @contacts.empty? %>
+        <div class="alert alert-info" role="alert">
+          <p>You have no contacts yet.  Add a contact below to schedule a KeepUp</p>
+        </div>
+      <% else %>
+          <% @contacts.each do |contact| %>
+            <li class='contact-list-item'><%= contact.name %> - <%= contact.email %></li>
+          <% end %>
+      <% end %>
+    </ul>
     <div>
       <button id='jq-add-contact' class='btn btn-info add-contact-button'><i class='fa fa-plus'></i> Add contact</button>
       <div id='jq-new-contact' class='hidden'>
