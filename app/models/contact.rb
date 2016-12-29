@@ -7,12 +7,10 @@ class Contact < ActiveRecord::Base
 
   after_create :assign_follow_up
 
-  # TODO: test
   def assign_follow_up
     FollowUpCreator.new(self)
   end
 
-  # TODO: test
   def next_follow_up
     follow_ups.order(:send_date).first
   end
